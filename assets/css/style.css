@@ -171,14 +171,9 @@ footer {
 
 /* ====== ANIMATION ====== */
 .fade-in {
-    opacity: 0;
-    transform: translateY(40px);
+    opacity: 1 !important;
+    transform: translateY(0) !important;
     transition: all 1s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 @keyframes fadeIn {
