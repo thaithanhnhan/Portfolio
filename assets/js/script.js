@@ -1,21 +1,20 @@
-// === Hiệu ứng gõ chữ (typing effect) ===
 document.addEventListener("DOMContentLoaded", function () {
-  // Gõ tên chính (Nguyễn Minh Dương)
-  const text = "Nguyễn Minh Dương";
-  const span = document.querySelector("#hero h2 span");
-  span.textContent = "";
-  let i = 0;
+  // === Hiệu ứng gõ chữ tên chính ===
+  const nameText = "Nguyễn Minh Dương";
+  const nameSpan = document.querySelector("#hero h2 span");
+  nameSpan.textContent = "";
+  let nameIndex = 0;
 
-  function typeEffect() {
-    if (i < text.length) {
-      span.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeEffect, 100);
+  function typeName() {
+    if (nameIndex < nameText.length) {
+      nameSpan.textContent += nameText.charAt(nameIndex);
+      nameIndex++;
+      setTimeout(typeName, 100);
     }
   }
-  typeEffect();
+  typeName();
 
-  // 🧠 Typing mô tả nghề nghiệp (đa dòng)
+  // === Hiệu ứng typing phụ mô tả nghề nghiệp ===
   const typingText = document.getElementById("typing-text");
   const messages = [
     "Sinh viên Công nghệ Thông tin 💻",
@@ -46,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(typeSubtitle, speed);
   }
-  typeSubtitle();
+
+  setTimeout(typeSubtitle, 2000); // delay nhẹ sau khi gõ tên
 });
 
 // === Animation khi cuộn (fade-in) ===
