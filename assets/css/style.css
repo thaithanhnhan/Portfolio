@@ -332,3 +332,15 @@ footer {
 @keyframes blink {
   50% { border-color: transparent; }
 }
+
+/* ==== TRANSITION SECTIONS ==== */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
