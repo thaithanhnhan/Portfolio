@@ -39,7 +39,9 @@
   <section id="about" class="fade-in">
     <div class="about-container">
       <div class="about-img">
-        <img src="https://thaithanhnhan.github.io/Portfolio/assets/images/avatar.jpg" alt="Avatar của Nguyễn Minh Dương">
+        <img src="https://thaithanhnhan.github.io/Portfolio/assets/images/avatar.jpg" 
+     alt="Avatar của Nguyễn Minh Dương" class="avatar">
+
 
       </div>
       <div class="about-text">
@@ -123,5 +125,32 @@
   </footer>
 
   <script src="assets/js/script.js" defer></script>
+
+<!-- Back to top button -->
+<button id="backToTop">↑</button>
+
+<script>
+  // Hiệu ứng cuộn fade-in
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.2 };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+
+  // Nút Back to top
+  const topBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    topBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
 </body>
 </html>
