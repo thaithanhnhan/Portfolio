@@ -253,6 +253,52 @@ footer {
   transform: scale(1.1);
 }
 
+
+/* ==== MOBILE MENU ==== */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: #00e0ff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-toggle:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    width: 100%;
+    background: rgba(10, 15, 30, 0.95);
+    text-align: center;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 15px 0;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 /* ==== RESPONSIVE ==== */
 @media (max-width: 768px) {
   header {

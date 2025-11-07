@@ -107,3 +107,11 @@ window.addEventListener("scroll", () => {
   const scrollPosition = window.scrollY;
   hero.style.backgroundPositionY = `${scrollPosition * 0.4}px`;
 });
+
+// === Menu di động (Hamburger Toggle) ===
+const menuToggle = document.getElementById("menu-toggle");
+const navBar = document.getElementById("navbar");
+
+menuToggle.addEventListener("click", () => {
+  navBar.classList.toggle("active");
+});
