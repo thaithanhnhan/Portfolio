@@ -1,9 +1,11 @@
 // === Hiệu ứng gõ chữ (typing effect) ===
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+  // Gõ tên chính (Nguyễn Minh Dương)
   const text = "Nguyễn Minh Dương";
   const span = document.querySelector("#hero h2 span");
-  span.textContent = ""; // reset
+  span.textContent = "";
   let i = 0;
+
   function typeEffect() {
     if (i < text.length) {
       span.textContent += text.charAt(i);
@@ -12,26 +14,59 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   typeEffect();
+
+  // 🧠 Typing mô tả nghề nghiệp (đa dòng)
+  const typingText = document.getElementById("typing-text");
+  const messages = [
+    "Sinh viên Công nghệ Thông tin 💻",
+    "Đam mê An ninh mạng 🔒",
+    "Yêu thích Trí tuệ nhân tạo 🤖",
+  ];
+  let msgIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeSubtitle() {
+    const current = messages[msgIndex];
+    typingText.textContent = current.substring(0, charIndex);
+    const speed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex < current.length) {
+      charIndex++;
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+    } else if (!isDeleting && charIndex === current.length) {
+      isDeleting = true;
+      setTimeout(typeSubtitle, 1200);
+      return;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      msgIndex = (msgIndex + 1) % messages.length;
+    }
+
+    setTimeout(typeSubtitle, speed);
+  }
+  typeSubtitle();
 });
 
 // === Animation khi cuộn (fade-in) ===
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -50px 0px"
-};
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
+const faders = document.querySelectorAll(".fade-in");
+const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+
+const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
+    entry.target.classList.add("visible");
     observer.unobserve(entry.target);
   });
 }, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
 
-// === Smooth scroll highlight active link ===
+faders.forEach((fader) => appearOnScroll.observe(fader));
+
+// === Smooth scroll + highlight link đang active ===
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav ul li a");
+
 window.addEventListener("scroll", () => {
   let current = "";
   sections.forEach((section) => {
@@ -53,9 +88,11 @@ const backToTopBtn = document.createElement("button");
 backToTopBtn.textContent = "↑";
 backToTopBtn.id = "backToTopBtn";
 document.body.appendChild(backToTopBtn);
+
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
 window.addEventListener("scroll", () => {
   if (window.scrollY > 400) {
     backToTopBtn.classList.add("show");
