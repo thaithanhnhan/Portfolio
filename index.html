@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nguyễn Minh Dương | IT Student Portfolio</title>
-
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <!-- HEADER -->
-<header id="header">
-  <div class="container">
-    <h1 class="logo">Nguyễn Minh Dương</h1>
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <nav id="navbar">
-      <ul>
-        <li><a href="#about">Giới thiệu</a></li>
-        <li><a href="#skills">Kỹ năng</a></li>
-        <li><a href="#projects">Dự án</a></li>
-        <li><a href="#certs">Chứng chỉ</a></li>
-        <li><a href="#contact">Liên hệ</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+  <header id="header">
+    <div class="container">
+      <h1 class="logo">Nguyễn Minh Dương</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#skills">Kỹ năng</a></li>
+          <li><a href="#projects">Dự án</a></li>
+          <li><a href="#certs">Chứng chỉ</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- HERO -->
-  <section id="hero">
+  <section id="hero" class="visible">
     <div class="hero-content">
       <h2>Xin chào, tôi là <span></span></h2>
-      <p id="typing-text"></p>
+      <p>Sinh viên Công nghệ Thông tin - Đam mê An ninh mạng & AI</p>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="fade-in">
+  <section id="about">
     <div class="about-container">
       <div class="about-img">
-        <img src="https://thaithanhnhan.github.io/Portfolio/assets/images/avatar.jpg" 
-             alt="Avatar của Nguyễn Minh Dương" class="avatar">
+        <img src="https://thaithanhnhan.github.io/Portfolio/assets/images/avatar.jpg" alt="Avatar của Nguyễn Minh Dương" class="avatar" />
       </div>
       <div class="about-text">
         <h2>Giới thiệu bản thân</h2>
@@ -58,7 +54,7 @@
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="fade-in">
+  <section id="skills">
     <div class="container">
       <h2>Kỹ năng</h2>
       <div class="skills-grid">
@@ -73,29 +69,29 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="fade-in">
+  <section id="projects">
     <div class="container">
       <h2>Dự án tiêu biểu</h2>
       <div class="project">
         <h3>Phishing Website Detection using Deep Learning</h3>
         <p>Phát triển mô hình học sâu đa phương thức (URL, HTML, Screenshot) phát hiện website phishing.
-           Giao diện Flask trực quan, hiển thị ảnh chụp trang web và điểm đánh giá an toàn.</p>
+          Giao diện Flask trực quan, hiển thị ảnh chụp trang web và điểm đánh giá an toàn.</p>
       </div>
       <div class="project">
         <h3>ISO/IEC 27001 Implementation for F&B SME</h3>
         <p>Nghiên cứu và áp dụng mô hình quản lý an toàn thông tin (ISMS) cho doanh nghiệp F&B quy mô vừa,
-           thực hiện GAP Analysis, checklist, và demo bằng Zabbix & Graylog.</p>
+          thực hiện GAP Analysis, checklist, và demo bằng Zabbix & Graylog.</p>
       </div>
       <div class="project">
         <h3>Cloud Security Lab (Suricata + Graylog + ModSecurity)</h3>
         <p>Xây dựng hệ thống phòng thủ mạng trên Docker, tích hợp IDS, SIEM, và reverse proxy có WAF,
-           giúp mô phỏng tấn công DDoS, SQLi, XSS và ghi nhận log bảo mật.</p>
+          giúp mô phỏng tấn công DDoS, SQLi, XSS và ghi nhận log bảo mật.</p>
       </div>
     </div>
   </section>
 
   <!-- CERTIFICATES -->
-  <section id="certs" class="fade-in">
+  <section id="certs">
     <div class="container">
       <h2>Chứng chỉ & Thành tích</h2>
       <ul>
@@ -107,7 +103,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="fade-in">
+  <section id="contact">
     <div class="container">
       <h2>Liên hệ</h2>
       <p>📧 Email: <a href="mailto:duong.it@example.com">duong.it@example.com</a></p>
@@ -120,11 +116,7 @@
     <p>© 2025 Nguyễn Minh Dương | IT Student Portfolio</p>
   </footer>
 
-  <!-- Back to top button -->
-<button id="backToTop">↑</button>
-
-<script src="https://thaithanhnhan.github.io/Portfolio/assets/js/script.js" defer></script>
-
-
+  <button id="backToTop">↑</button>
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>
