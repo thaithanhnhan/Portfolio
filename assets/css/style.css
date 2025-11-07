@@ -271,3 +271,18 @@ footer {
     font-size: 28px;
   }
 }
+
+#typing-text {
+  color: #cfd8dc;
+  font-size: 18px;
+  white-space: nowrap;
+  border-right: 3px solid #00e0ff;
+  width: fit-content;
+  margin: auto;
+  overflow: hidden;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
