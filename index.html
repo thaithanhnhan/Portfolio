@@ -6,7 +6,6 @@
   <title>Nguyễn Minh Dương | IT Student Portfolio</title>
 
   <link rel="stylesheet" href="assets/css/style.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 
@@ -27,23 +26,20 @@
     </div>
   </header>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-content">
-    <h2>Xin chào, tôi là <span></span></h2>
-    <p id="typing-text"></p>
-  </div>
-</section>
-
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <h2>Xin chào, tôi là <span></span></h2>
+      <p id="typing-text"></p>
+    </div>
+  </section>
 
   <!-- ABOUT -->
   <section id="about" class="fade-in">
     <div class="about-container">
       <div class="about-img">
         <img src="https://thaithanhnhan.github.io/Portfolio/assets/images/avatar.jpg" 
-     alt="Avatar của Nguyễn Minh Dương" class="avatar">
-
-
+             alt="Avatar của Nguyễn Minh Dương" class="avatar">
       </div>
       <div class="about-text">
         <h2>Giới thiệu bản thân</h2>
@@ -78,23 +74,20 @@
   <section id="projects" class="fade-in">
     <div class="container">
       <h2>Dự án tiêu biểu</h2>
-
       <div class="project">
         <h3>Phishing Website Detection using Deep Learning</h3>
         <p>Phát triển mô hình học sâu đa phương thức (URL, HTML, Screenshot) phát hiện website phishing.
-          Giao diện Flask trực quan, hiển thị ảnh chụp trang web và điểm đánh giá an toàn.</p>
+           Giao diện Flask trực quan, hiển thị ảnh chụp trang web và điểm đánh giá an toàn.</p>
       </div>
-
       <div class="project">
         <h3>ISO/IEC 27001 Implementation for F&B SME</h3>
         <p>Nghiên cứu và áp dụng mô hình quản lý an toàn thông tin (ISMS) cho doanh nghiệp F&B quy mô vừa,
-          thực hiện GAP Analysis, checklist, và demo bằng Zabbix & Graylog.</p>
+           thực hiện GAP Analysis, checklist, và demo bằng Zabbix & Graylog.</p>
       </div>
-
       <div class="project">
         <h3>Cloud Security Lab (Suricata + Graylog + ModSecurity)</h3>
         <p>Xây dựng hệ thống phòng thủ mạng trên Docker, tích hợp IDS, SIEM, và reverse proxy có WAF,
-          giúp mô phỏng tấn công DDoS, SQLi, XSS và ghi nhận log bảo mật.</p>
+           giúp mô phỏng tấn công DDoS, SQLi, XSS và ghi nhận log bảo mật.</p>
       </div>
     </div>
   </section>
@@ -125,33 +118,10 @@
     <p>© 2025 Nguyễn Minh Dương | IT Student Portfolio</p>
   </footer>
 
+  <!-- Back to top button -->
+  <button id="backToTop">↑</button>
 
-
-<!-- Back to top button -->
-<button id="backToTop">↑</button>
-
-<script>
-  // Hiệu ứng cuộn fade-in
-  const faders = document.querySelectorAll('.fade-in');
-  const appearOptions = { threshold: 0.2 };
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-  faders.forEach(fader => appearOnScroll.observe(fader));
-
-  // Nút Back to top
-  const topBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    topBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-  });
-  topBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+  <!-- Gọi script chính -->
   <script src="assets/js/script.js" defer></script>
 </body>
 </html>
